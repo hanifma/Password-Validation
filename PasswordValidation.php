@@ -1,9 +1,9 @@
 <?php
 function formVadilationPassword($password){
-	$minVal = strlen($password) == 8;
-	$kapVal = preg_match('/[A-Z]/', $password);
-	$lowVal = preg_match('/[a-z]/', $password);
-	$specVal = preg_match('/[#$%^&*()+=\-\[\]\';,.\/{}|":<>?~\\\\]/', $password);
+	$minVal = strlen($password) == 8; //term validation
+	$kapVal = preg_match('/[A-Z]/', $password); //term validation
+	$lowVal = preg_match('/[a-z]/', $password); //term validation
+	$specVal = preg_match('/[#$%^&*()+=\-\[\]\';,.\/{}|":<>?~\\\\]/', $password); //term validation
 	
 	if ($minVal && $kapVal && $lowVal && $specVal) {
 		echo "password true";
@@ -11,6 +11,6 @@ function formVadilationPassword($password){
 		echo "password false";
 	}
 }
-$pass = "ASAsS%^&";
+$pass = "ASAsS%^&"; //example password
 formVadilationPassword($pass);
 ?>
